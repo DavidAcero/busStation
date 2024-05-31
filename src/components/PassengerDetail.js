@@ -1,41 +1,36 @@
-import React, { useState, useEffect } from "react";
-import EachPassengerForm from "./EachPassengerForm";
-import { useSelector, useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import EachPassengerForm from './EachPassengerForm';
+import { useSelector, useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import moment from "moment";
+import axios from 'axios';
 
 import {
-  addSeat,
   emptyAll,
-  selectBus,
   selectSeats,
   selectContactData,
   selectPassengerData,
   selectSelectedBusData,
   selectDate,
-} from "../features/seats/seatsSlice";
-import ContactForm from "./ContactForm";
-import letter from "../images/letter.svg";
-import person from "../images/person.svg";
-import checked from "../images/checked.svg";
-import moment from "moment";
-import Loading from "./Loading";
-import LoadingPayment from "./LoadingPayment";
+} from '../features/seats/seatsSlice';
+import ContactForm from './ContactForm';
+import letter from '../images/letter.svg';
+import person from '../images/person.svg';
+import checked from '../images/checked.svg';
+import LoadingPayment from './LoadingPayment';
 
-export default function PassengerDetail({
+const PassengerDetail = ({
   handleCloseClick,
   total,
   boardingData,
   droppingData,
   timing,
-}) {
+}) => {
   const seats = useSelector(selectSeats);
   const contactData = useSelector(selectContactData);
   const passengerData = useSelector(selectPassengerData);
   const busData = useSelector(selectSelectedBusData);
   const date = useSelector(selectDate);
-
-  let busId = useSelector(selectBus);
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -44,78 +39,68 @@ export default function PassengerDetail({
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (seats.length === passengerData.length && contactData.length != 0) {
-      console.log("Save Data to Database");
+    if (seats.length === passengerData.length && contactData.length !== 0) {
       bookTickets();
     }
     return () => {
       setIsSubmitForm(false);
     };
-  }, [isSubmitForm == true]);
+  }, [isSubmitForm]);
 
-  function SubmitForm() {
+  const handleSubmitForm = () => {
     setIsSubmitForm(true);
   };
 
-  function UnSubmitForm() {
+  const handleUnSubmitForm = () => {
     setIsSubmitForm(false);
-  }
+  };
 
   async function bookTickets() {
-    const requests = passengerData.map((each) => {
-      let ticketToAdd = {
-        id: 777,
-        data: {
-          name: each.name,
-          gender: each.gender,
-          age: parseInt(each.age),
-          email: "nikhilthakare14@gmail.com",
-          phone: 9405135957,
-          boarding_point: each.boarding_point,
-          dropping_point: each.dropping_point,
-          boarding_time: moment(timing.arrival)
-            .add(boardingData.add_time, "m")
-            .format("HH:mm A"),
-          dropping_time: moment(timing.departure)
-            .add(droppingData.remove_time, "m")
-            .format("HH:mm A"),
-          price: total,
-          date: moment(date).format("dddd, MMMM DD, YYYY"),
-          seatno: each.seatno,
-        }
-      };
-      return ticketToAdd;
-    });
-
     try {
-      console.log("Inside the following IF");
+      const requests = passengerData.map((each) => {
+        let ticketToAdd = {
+          id: 777,
+          data: {
+            name: each.name,
+            gender: each.gender,
+            age: parseInt(each.age),
+            email: "nikhilthakare14@gmail.com",
+            phone: 9405135957,
+            boarding_point: each.boarding_point,
+            dropping_point: each.dropping_point,
+            boarding_time: moment(timing.arrival)
+              .add(boardingData.add_time, "m")
+              .format("HH:mm A"),
+            dropping_time: moment(timing.departure)
+              .add(droppingData.remove_time, "m")
+              .format("HH:mm A"),
+            price: total,
+            date: moment(date).format("dddd, MMMM DD, YYYY"),
+            seatno: each.seatno,
+          }
+        };
+        return ticketToAdd;
+      });
 
-      // Setting True should take you to the wait screen
-      setIsLoading(false);
+      const responses = await axios.all(requests);
 
-      const responses = await axios.all(requests );
-
-      console.log("RESPONSES: " + JSON.stringify(responses));
-
-      if (responses && responses.length != 0) {
+      if (responses && responses.length !== 0) {
         dispatch(emptyAll());
 
-        let ticketInfo = responses.map((each) => each.data);
-
-        console.log("RESPONSES_TICKET_INFO_02: " + JSON.stringify(ticketInfo));
+        const ticketInfo = responses.map((each) => each.data);
 
         history.push({
-          pathname: "/bookedtickets",
+          pathname: '/bookedtickets',
           state: {
             tickets: ticketInfo,
-            total: total,
+            total,
             data: busData,
           },
         });
-
       }
     } catch (err) {
-      console.log(err.message);
+      console.error(err);
+      alert('An error occurred while booking tickets. Please try again.');
     }
   }
 
@@ -163,7 +148,7 @@ export default function PassengerDetail({
                   id={id}
                   index={index}
                   isSubmitForm={isSubmitForm}
-                  UnSubmitForm={UnSubmitForm}
+                  UnSubmitForm={handleUnSubmitForm}
                   boardingData={boardingData}
                   droppingData={droppingData}
                 />
@@ -175,10 +160,7 @@ export default function PassengerDetail({
               <img src={letter} className="passenger-information-logo" />
               <h4>Contact Details</h4>
             </div>
-            <ContactForm
-              isSubmitForm={isSubmitForm}
-              UnSubmitForm={UnSubmitForm}
-            />
+            <ContactForm isSubmitForm={isSubmitForm} UnSubmitForm={handleUnSubmitForm} />
           </div>
         </div>
         <div className="passenger-bill">
@@ -190,7 +172,7 @@ export default function PassengerDetail({
           </div>
           <button
             className="passenger-book-ticket-button"
-            onClick={SubmitForm}
+            onClick={handleSubmitForm}
           >
             PROCEED TO PAY
           </button>
@@ -198,4 +180,6 @@ export default function PassengerDetail({
       </div>
     </div>
   );
-}
+};
+
+export default PassengerDetail;
