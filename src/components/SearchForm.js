@@ -3,7 +3,7 @@ import moment from "moment";
 import { useHistory } from "react-router-dom";
 
 import building from "../images/building.svg";
-import CitiesData from "./cities.json";
+import CitiesData from "./_availableCities.json";
 
 export default function SearchForm() {
   let history = useHistory();

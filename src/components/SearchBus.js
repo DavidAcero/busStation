@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
 
+import { AVAILABLE_ROUTES } from "../mockDataBase/availableRoutes";
 import ModifyCurrentSearch from "./ModifyCurrentSearch";
 import CurrentSearch from "./CurrentSearch";
 import EachBusData from "./EachBusData";
@@ -29,21 +30,19 @@ export default function SearchBus() {
   useEffect(() => {
     let source = axios.CancelToken.source();
     dispatch(addDate(date));
-    fetchData(source);
+    fetchData();
 
     return () => {
       source.cancel("Cancelling in cleanup");
     };
   }, [from, to, date]);
 
-  async function fetchData(source) {
+  async function fetchData() {
     setIsLoading(true);
-    const response = await axios.get(`/bus/search?to=${to}&from=${from}`, {
-      cancelToken: source.token,
-    });
+    const response = AVAILABLE_ROUTES;
 
     if (response) {
-      console.log(response.data);
+      console.log("INSIDE SEARCH: " + response.data);
       setData(response.data);
       setIsLoading(false);
     }

@@ -1,14 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import {
-  Page,
-  Text,
-  View,
-  Document,
-  StyleSheet,
-  PDFViewer,
-  Image,
-} from "@react-pdf/renderer";
+import { Page, Text, View, Document, StyleSheet, PDFViewer, Image } from "@react-pdf/renderer";
 import busLogo from "../images/buslogo.png";
 import phoneLogo from "../images/telephone.png";
 

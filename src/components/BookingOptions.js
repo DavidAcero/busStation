@@ -1,12 +1,7 @@
 import moment from "moment";
 import React, { useEffect, useRef, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  addSeat,
-  selectSeats,
-  selectContactData,
-  selectPassengerData,
-} from "../features/seats/seatsSlice";
+import { useSelector } from "react-redux";
+import { selectSeats } from "../features/seats/seatsSlice";
 import PassengerDetail from "./PassengerDetail";
 
 export default function BookingOptions({ data }) {

@@ -21,6 +21,7 @@ import checked from "../images/checked.svg";
 import moment from "moment";
 import Loading from "./Loading";
 import LoadingPayment from "./LoadingPayment";
+import { availableTickets } from "../mockDataBase/availableTickets";
 
 export default function PassengerDetail({
   handleCloseClick,
@@ -55,50 +56,57 @@ export default function PassengerDetail({
 
   function SubmitForm() {
     setIsSubmitForm(true);
-    // if (seats.length === passengerData.length && contactData.length != 0) {
-    //   console.log("Save Data to Database");
-    //   bookTickets();
-    // }
-  }
+  };
 
   function UnSubmitForm() {
     setIsSubmitForm(false);
   }
 
   async function bookTickets() {
-    const requests = passengerData.map((each) =>
-      axios
-        .post("/bus/bookticket", {
-          id: busId,
-          data: {
-            name: each.name,
-            gender: each.gender,
-            age: parseInt(each.age),
-            email: "nikhilthakare14@gmail.com",
-            phone: 9405135957,
-            boarding_point: each.boarding_point,
-            dropping_point: each.dropping_point,
-            boarding_time: moment(timing.arrival)
-              .add(boardingData.add_time, "m")
-              .format("HH:mm A"),
-            dropping_time: moment(timing.departure)
-              .add(droppingData.remove_time, "m")
-              .format("HH:mm A"),
-            price: total,
-            date: moment(date).format("dddd, MMMM DD, YYYY"),
-            seatno: each.seatno,
-          },
-        })
-        .catch((err) => null)
-    );
+    const requests = passengerData.map((each) => {
+
+
+      let ticketToAdd = {
+        id: busId,
+        data: {
+          name: each.name,
+          gender: each.gender,
+          age: parseInt(each.age),
+          email: "nikhilthakare14@gmail.com",
+          phone: 9405135957,
+          boarding_point: each.boarding_point,
+          dropping_point: each.dropping_point,
+          boarding_time: moment(timing.arrival)
+            .add(boardingData.add_time, "m")
+            .format("HH:mm A"),
+          dropping_time: moment(timing.departure)
+            .add(droppingData.remove_time, "m")
+            .format("HH:mm A"),
+          price: total,
+          date: moment(date).format("dddd, MMMM DD, YYYY"),
+          seatno: each.seatno,
+        }
+      };
+      availableTickets.push(ticketToAdd);
+      return ticketToAdd;
+    });
 
     try {
-      setIsLoading(true);
+      console.log("Inside the following IF");
+
+      // Setting True should take you to the wait scree
+      setIsLoading(false);
+
       const responses = await axios.all(requests);
+      console.log("RESPONSES: " + JSON.stringify(responses));
+
       if (responses && responses.length != 0) {
         dispatch(emptyAll());
-        console.log(responses);
+
         let ticketInfo = responses.map((each) => each.data);
+
+        console.log("RESPONSES_TICKET_INFO_02: " + JSON.stringify(ticketInfo));
+
         history.push({
           pathname: "/bookedtickets",
           state: {
@@ -107,9 +115,8 @@ export default function PassengerDetail({
             data: busData,
           },
         });
-        setIsLoading(false);
+
       }
-      console.log(responses);
     } catch (err) {
       console.log(err.message);
     }
