@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/busStation/static/css/main.8dad8a9b.chunk.css",
-    "main.js": "/busStation/static/js/main.3cec1730.chunk.js",
-    "main.js.map": "/busStation/static/js/main.3cec1730.chunk.js.map",
-    "runtime-main.js": "/busStation/static/js/runtime-main.d730d1f9.js",
-    "runtime-main.js.map": "/busStation/static/js/runtime-main.d730d1f9.js.map",
-    "static/js/2.dfc53441.chunk.js": "/busStation/static/js/2.dfc53441.chunk.js",
-    "static/js/2.dfc53441.chunk.js.map": "/busStation/static/js/2.dfc53441.chunk.js.map",
-    "static/js/3.caaf1a0b.chunk.js": "/busStation/static/js/3.caaf1a0b.chunk.js",
-    "static/js/3.caaf1a0b.chunk.js.map": "/busStation/static/js/3.caaf1a0b.chunk.js.map",
+    "main.js": "/busStation/static/js/main.c182535b.chunk.js",
+    "main.js.map": "/busStation/static/js/main.c182535b.chunk.js.map",
+    "runtime-main.js": "/busStation/static/js/runtime-main.9b93cba0.js",
+    "runtime-main.js.map": "/busStation/static/js/runtime-main.9b93cba0.js.map",
+    "static/js/2.2789eb22.chunk.js": "/busStation/static/js/2.2789eb22.chunk.js",
+    "static/js/2.2789eb22.chunk.js.map": "/busStation/static/js/2.2789eb22.chunk.js.map",
+    "static/js/3.45344698.chunk.js": "/busStation/static/js/3.45344698.chunk.js",
+    "static/js/3.45344698.chunk.js.map": "/busStation/static/js/3.45344698.chunk.js.map",
     "index.html": "/busStation/index.html",
     "static/css/main.8dad8a9b.chunk.css.map": "/busStation/static/css/main.8dad8a9b.chunk.css.map",
-    "static/js/2.dfc53441.chunk.js.LICENSE.txt": "/busStation/static/js/2.dfc53441.chunk.js.LICENSE.txt",
+    "static/js/2.2789eb22.chunk.js.LICENSE.txt": "/busStation/static/js/2.2789eb22.chunk.js.LICENSE.txt",
     "static/media/arrow-down.dc8b4d44.svg": "/busStation/static/media/arrow-down.dc8b4d44.svg",
     "static/media/bed-sheets.d6a6d5a2.svg": "/busStation/static/media/bed-sheets.d6a6d5a2.svg",
     "static/media/building.f689c742.svg": "/busStation/static/media/building.f689c742.svg",
@@ -42,9 +42,9 @@
     "static/media/wifi.fb6fed16.svg": "/busStation/static/media/wifi.fb6fed16.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d730d1f9.js",
-    "static/js/2.dfc53441.chunk.js",
+    "static/js/runtime-main.9b93cba0.js",
+    "static/js/2.2789eb22.chunk.js",
     "static/css/main.8dad8a9b.chunk.css",
-    "static/js/main.3cec1730.chunk.js"
+    "static/js/main.c182535b.chunk.js"
   ]
 }
