@@ -12,7 +12,7 @@ export default function LoadingPayment({ title }) {
           {title ? title : "Loading"}
         </span>
         <br />
-        <span className="payment-loading-title">Please Wait...</span>
+        <span className="payment-loading-title">Please Wait While Tickets Are Generated...</span>
       </div>
     </div>
   );
