@@ -40,7 +40,11 @@ const PassengerDetail = ({
 
   useEffect(() => {
     if (seats.length === passengerData.length && contactData.length !== 0) {
-      bookTickets();
+      setIsLoading(true);
+      setTimeout(() => {
+        setIsLoading(false);
+        bookTickets();
+      }, 3000);
     }
     return () => {
       setIsSubmitForm(false);
