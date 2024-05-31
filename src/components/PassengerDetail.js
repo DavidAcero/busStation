@@ -63,8 +63,8 @@ const PassengerDetail = ({
     try {
       const requests = passengerData.map((each) => {
         let ticketToAdd = {
-          id: 777,
           data: {
+            id: 2640, 
             name: each.name,
             gender: each.gender,
             age: parseInt(each.age),

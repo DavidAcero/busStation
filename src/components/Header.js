@@ -35,7 +35,7 @@ export default function Header() {
             <li>
               <button
                 className="header-dropdown-button"
-                onClick={() => console.log("SignIn")}
+                onClick={() => console.log("SignIn Clicked")}
               >
                 SignIn
               </button>
@@ -43,7 +43,7 @@ export default function Header() {
             <li>
               <button
                 className="header-dropdown-button"
-                onClick={() => console.log("Register")}
+                onClick={() => console.log("Register Clicked")}
               >
                 Register
               </button>

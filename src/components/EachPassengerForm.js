@@ -46,7 +46,7 @@ export default function EachPassengerForm({
   function handleSubmit(event) {
     if (formData.name != "" && formData.gender != "" && formData.age != "") {
       if (passengerData.includes(formData)) {
-        console.log("includessss");
+        console.log("== Inside this part 02 ==");
       } else {
         dispatch(
           addPassengerData({

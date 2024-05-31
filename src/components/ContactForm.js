@@ -37,7 +37,7 @@ export default function ContactForm({ id, index, isSubmitForm, UnSubmitForm }) {
   function handleSubmit(event) {
     if (formData.email != "" && formData.phone != "") {
       if (contactData === formData) {
-        console.log("includessss");
+        console.log("== Inside this part 01 ==");
       } else {
         dispatch(addContactData(formData));
       }

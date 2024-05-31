@@ -13,13 +13,13 @@ import SeatLegends from "./SeatLegends";
 import BookingOptions from "./BookingOptions";
 
 export default function BookingSeat({ openBooking, data }) {
-  let busId = useSelector(selectBus);
+  let busId = Math.floor(Math.random() * 300) + 1;
   let seatType = useSelector(selectSeatType);
 
   const dispatch = useDispatch();
   let { share_seat_price, single_seat_price, booked_seat } = data;
 
-  console.log(busId);
+  console.log("BUS ID: " + JSON.stringify(busId));
 
   useEffect(() => {
     dispatch(addBookedSeats(getBookedSeats()));

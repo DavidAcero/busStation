@@ -184,8 +184,6 @@ router.get("/saveAllBuses", function (req, res, next) {
 
       return data;
     }
-
-    // console.log(getBusData());
     return getBusData();
   }
 

@@ -45,13 +45,10 @@ export default function BookingOptions({ data }) {
   function handleContinueClick() {
     if (totalCost() == 0) {
       setMissingData("Select Seat/Seats");
-      console.log("select seatss");
     } else if (boardingPoint == "") {
       setMissingData("Select Boarding Point");
-      console.log("select boarding point");
     } else if (droppingPoint == "") {
       setMissingData("Select Dropping Point");
-      console.log("select Dropping Point");
     }
 
     if (totalCost() != 0) {

@@ -11,7 +11,6 @@ export default function Deck({ data, type }) {
 
   let { _id } = data;
 
-  console.log(seats);
   let seatEvenNumber = [];
   let seatEvenAlphabet = [];
   let seatOddNumber = [];
@@ -26,10 +25,6 @@ export default function Deck({ data, type }) {
       seatEvenAlphabet.push(String.fromCharCode(65 + i));
     }
   }
-
-  // console.log(
-  //   `Number: Even - ${seatEvenNumber}, Odd - ${seatOddNumber};; Alphabet: Even - ${seatEvenAlphabet}, Odd - ${seatOddAlphabet}`
-  // );
 
   return (
     <div className="deck">

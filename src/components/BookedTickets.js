@@ -194,9 +194,9 @@ const MyDocument = ({ ticketInfo, totalCost, busData }) => (
               </View>
               <View>
                 <Text style={styles.passengerInfoTextTitle}>
-                  thunderbirdBus ticket #
+                  Bus #
                 </Text>
-                <Text style={styles.passengerInfoText}>{each._id}</Text>
+                <Text style={styles.passengerInfoText}>{each.id}</Text>
               </View>
               <View>
                 <Text style={styles.passengerInfoTextTitle}>Seat Numbers</Text>
@@ -277,7 +277,7 @@ export default function BookedTickets() {
   let totalCost = location.state.total;
   let busData = location.state.data;
 
-  console.log(ticketInfo);
+  console.log("Ticket Information: " + JSON.stringify(ticketInfo));
   return (
     <div className="bookedTickets">
       <PDFViewer width="90%" height="100%">
