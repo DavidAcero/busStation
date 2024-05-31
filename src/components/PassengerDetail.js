@@ -21,7 +21,6 @@ import checked from "../images/checked.svg";
 import moment from "moment";
 import Loading from "./Loading";
 import LoadingPayment from "./LoadingPayment";
-import { availableTickets } from "../mockDataBase/availableTickets";
 
 export default function PassengerDetail({
   handleCloseClick,
@@ -64,10 +63,8 @@ export default function PassengerDetail({
 
   async function bookTickets() {
     const requests = passengerData.map((each) => {
-
-
       let ticketToAdd = {
-        id: busId,
+        id: 777,
         data: {
           name: each.name,
           gender: each.gender,
@@ -87,17 +84,17 @@ export default function PassengerDetail({
           seatno: each.seatno,
         }
       };
-      availableTickets.push(ticketToAdd);
       return ticketToAdd;
     });
 
     try {
       console.log("Inside the following IF");
 
-      // Setting True should take you to the wait scree
+      // Setting True should take you to the wait screen
       setIsLoading(false);
 
-      const responses = await axios.all(requests);
+      const responses = await axios.all(requests );
+
       console.log("RESPONSES: " + JSON.stringify(responses));
 
       if (responses && responses.length != 0) {
@@ -191,7 +188,10 @@ export default function PassengerDetail({
               <strong>INR {total}</strong>
             </span>
           </div>
-          <button className="passenger-book-ticket-button" onClick={SubmitForm}>
+          <button
+            className="passenger-book-ticket-button"
+            onClick={SubmitForm}
+          >
             PROCEED TO PAY
           </button>
         </div>
