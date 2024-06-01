@@ -242,7 +242,7 @@ const MyDocument = ({ ticketInfo, totalCost, busData }) => (
           <View style={styles.busDetailTwo}>
             <View style={styles.busDetailSubBox}>
               <Text style={styles.busDetailTextTitle}>Total Fare</Text>
-              <Text style={styles.busDetailText}>Rs. {totalCost}</Text>
+              <Text style={styles.busDetailText}>USD. {totalCost}</Text>
             </View>
             <View style={styles.busDetailSubBox}>
               <Text style={styles.busDetailTextTitle}>Departure Time</Text>

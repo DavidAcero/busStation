@@ -85,11 +85,11 @@ export default function BookingOptions({ data }) {
 
   if (showBill) {
     let boardingData = boarding_point.find(
-      (each) => each._id === boardingPoint
+      (each) => each.id === boardingPoint
     );
 
     let droppingData = dropping_point.find(
-      (each) => each._id === droppingPoint
+      (each) => each.id === droppingPoint
     );
 
     console.log(boardingData.address);
@@ -161,7 +161,7 @@ export default function BookingOptions({ data }) {
                 </span>
               </div>
             </div>
-            <strong>INR {totalCost()}</strong>
+            <strong>USD {totalCost()}</strong>
           </div>
           <div className="bill-data-each">
             <button
@@ -206,17 +206,17 @@ export default function BookingOptions({ data }) {
             selectedData.map((each) => {
               return (
                 <li
-                  key={each._id}
+                  key={each.id}
                   ref={ButtonRef}
-                  name={each._id}
+                  name={each.id}
                   className="booking-option-each-checkbox"
                   onClick={() => {
-                    handleCheckboxClick(each._id);
+                    handleCheckboxClick(each.id);
                   }}
                 >
                   <button
                     className={
-                      boardingPoint === each._id || droppingPoint === each._id
+                      boardingPoint === each.id || droppingPoint === each.id
                         ? "booking-option-each-checkbox-logo-select"
                         : "booking-option-each-checkbox-logo-outer"
                     }
@@ -242,7 +242,7 @@ export default function BookingOptions({ data }) {
           <div className="booking-confirm-button-box">
             <strong>Amount</strong>
             <strong>
-              INR <span>{totalCost()}</span>
+              USD <span>{totalCost()}</span>
             </strong>
           </div>
           <button

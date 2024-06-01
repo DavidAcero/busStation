@@ -33,7 +33,7 @@ export default function CurrentSearch({ onModifyClicked, from, to, date }) {
               className="search-current-result-button"
               onClick={handlePreviousButton}
             >
-              <img src={next} className="search-current-result-previous" />
+              <img src={next} className="search-current-result-previous" data-cy="dayBefore" />
             </button>
             <div className="search-current-result-date-text">
               <span className="search-current-result-date-text-title">
@@ -47,10 +47,11 @@ export default function CurrentSearch({ onModifyClicked, from, to, date }) {
               className="search-current-result-button"
               onClick={handleNextButton}
             >
-              <img src={next} className="search-current-result-arrow" />
+              <img src={next} className="search-current-result-arrow" data-cy="dayAfter"/>
             </button>
           </div>
           <button
+            data-cy="modifyButton"
             className="search-current-result-modify"
             onClick={onModifyClicked}
           >

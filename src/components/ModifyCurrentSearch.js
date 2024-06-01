@@ -46,7 +46,7 @@ export default function ModifyCurrentSearch({
   return (
     <div>
       <button className="form-modify-close" onClick={onModifyClicked}>
-        <img src={Cancel} className="form-modify-close-logo" />
+        <img src={Cancel} className="form-modify-close-logo" data-cy="closeModify" />
       </button>
       <form className="form-modify" onSubmit={handleSubmit}>
         <div className="form-modify-box">
@@ -58,10 +58,11 @@ export default function ModifyCurrentSearch({
             value={formData.from}
             onChange={handleChange}
             className="form-modify-input"
+            data-cy="modifyFrom"
           ></input>
         </div>
         <button className="form-modify-swap-button" onClick={SwapData}>
-          <img src={SwapArrow} className="form-modify-swap-logo" />
+          <img src={SwapArrow} className="form-modify-swap-logo" data-cy="swapCities" />
         </button>
         <div className="form-modify-box">
           <span className="form-modify-title">TO</span>
@@ -72,6 +73,7 @@ export default function ModifyCurrentSearch({
             value={formData.to}
             onChange={handleChange}
             className="form-modify-input"
+            data-cy="modifyTo"
           ></input>
         </div>
         <div className="form-modify-box">
@@ -83,9 +85,10 @@ export default function ModifyCurrentSearch({
             onChange={handleChange}
             min={moment().format("YYYY-MM-DD")}
             className="form-modify-input"
+            data-cy="modifyDate"
           ></input>
         </div>
-        <button type="submit" className="form-modify-submit-button">
+        <button type="submit" className="form-modify-submit-button" data-cy="modifySearch">
           Search
         </button>
       </form>

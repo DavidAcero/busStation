@@ -70,7 +70,7 @@ export default function EachBusData({ data }) {
           </span>
         </div>
         <span className="result-each-data-price">
-          <span style={{ fontWeight: 400 }}>INR</span> {single_seat_price}
+          <span style={{ fontWeight: 400 }}>USD</span> {single_seat_price}
         </span>
         <div className="result-each-data-extra">
           <span className="result-each-data-extra-available">
@@ -86,7 +86,7 @@ export default function EachBusData({ data }) {
         <Amenities data={amenities} />
       </div>
       <div className="result-each-seats">
-        <button className="result-each-seats-button" onClick={openBooking}>
+        <button className="result-each-seats-button" data-cy="viewHideSeats" onClick={openBooking}>
           {openSeats ? <span>Hide</span> : <span>View</span>} Seat
         </button>
       </div>

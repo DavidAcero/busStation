@@ -119,7 +119,7 @@ const PassengerDetail = ({
           </div>
           <div className="payment-amount-box">
             <span className="payment-amount-title">Amount Paid: </span>
-            <span className="payment-amount-value">Rs. {total} </span>
+            <span className="payment-amount-value">USD. {total} </span>
           </div>
           <div className="payment-pdf">
             <LoadingPayment title={"Generating your PDF ticket"} />
@@ -171,7 +171,7 @@ const PassengerDetail = ({
           <div className="passenger-bill-amount">
             <span>Total Amount :</span>
             <span>
-              <strong>INR {total}</strong>
+              <strong>USD {total}</strong>
             </span>
           </div>
           <button

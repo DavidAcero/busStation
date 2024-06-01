@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/busStation/static/css/main.8dad8a9b.chunk.css",
-    "main.js": "/busStation/static/js/main.c182535b.chunk.js",
-    "main.js.map": "/busStation/static/js/main.c182535b.chunk.js.map",
+    "main.js": "/busStation/static/js/main.89f7b681.chunk.js",
+    "main.js.map": "/busStation/static/js/main.89f7b681.chunk.js.map",
     "runtime-main.js": "/busStation/static/js/runtime-main.9b93cba0.js",
     "runtime-main.js.map": "/busStation/static/js/runtime-main.9b93cba0.js.map",
     "static/js/2.2789eb22.chunk.js": "/busStation/static/js/2.2789eb22.chunk.js",
@@ -36,7 +36,6 @@
     "static/media/ticket.b354d367.svg": "/busStation/static/media/ticket.b354d367.svg",
     "static/media/tracking.17fa1877.svg": "/busStation/static/media/tracking.17fa1877.svg",
     "static/media/tv.a654fa5f.svg": "/busStation/static/media/tv.a654fa5f.svg",
-    "static/media/twitter.59ada547.svg": "/busStation/static/media/twitter.59ada547.svg",
     "static/media/user.ab16831a.svg": "/busStation/static/media/user.ab16831a.svg",
     "static/media/video.bd6fc385.svg": "/busStation/static/media/video.bd6fc385.svg",
     "static/media/wifi.fb6fed16.svg": "/busStation/static/media/wifi.fb6fed16.svg"
@@ -45,6 +44,6 @@
     "static/js/runtime-main.9b93cba0.js",
     "static/js/2.2789eb22.chunk.js",
     "static/css/main.8dad8a9b.chunk.css",
-    "static/js/main.c182535b.chunk.js"
+    "static/js/main.89f7b681.chunk.js"
   ]
 }

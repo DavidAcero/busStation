@@ -1,6 +1,6 @@
 {
-  "short_name": "NonRed Bus",
-  "name": "NonRed Bus is the world's largest online bus ticket booking service trusted by over 18 million happy customers globally. NonRed Bus offers bus ticket booking through its website for all major routes. (Fake information for demo)",
+  "short_name": "QA On Wheels Bus",
+  "name": "QA On Wheels Bus is the world's largest online bus ticket booking service trusted by over 18 million happy customers globally. QA On Wheels Bus offers bus ticket booking through its website for all major routes [Phoenix, Las Vegas, Tucson, San Francisco, Los Angeles]. ",
   "icons": [
     {
       "src": "favicon.ico",

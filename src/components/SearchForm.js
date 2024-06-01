@@ -51,11 +51,6 @@ export default function SearchForm() {
     event.preventDefault();
   }
 
-  function capitalize(word) {
-    const lower = word.toLowerCase();
-    return word.charAt(0).toUpperCase() + lower.slice(1);
-  }
-
   function getCity() {
     let city = JSON.parse(JSON.stringify(CitiesData));
 
@@ -70,10 +65,11 @@ export default function SearchForm() {
         <div className="form-each-box">
           <img src={building} alt="" className="form-logo" />
           <input
+            data-cy="fromInput"
             name="from"
             type="text"
             placeholder="FROM"
-            value={capitalize(formData.from)}
+            value={formData.from}
             onChange={handleChange}
             className="form-input"
             required={true}
@@ -104,10 +100,11 @@ export default function SearchForm() {
         <div className="form-each-box">
           <img src={building} alt="" className="form-logo" />
           <input
+            data-cy="toInput"
             name="to"
             type="text"
             placeholder="TO"
-            value={capitalize(formData.to)}
+            value={formData.to}
             onChange={handleChange}
             className="form-input"
             required={true}
@@ -140,6 +137,7 @@ export default function SearchForm() {
         <div className="form-each-box">
           <img src={building} alt="" className="form-logo" />
           <input
+            data-cy="dateInput"
             name="date"
             type="date"
             value={formData.date}
@@ -148,7 +146,7 @@ export default function SearchForm() {
             className="form-input"
           ></input>
         </div>
-        <button type="submit" className="form-submit-button">
+        <button type="submit" className="form-submit-button" data-cy="SearchBuses">
           Search Buses
         </button>
       </form>

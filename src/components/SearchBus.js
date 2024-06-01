@@ -39,11 +39,15 @@ export default function SearchBus() {
 
   async function fetchData() {
     setIsLoading(true);
-    const response = AVAILABLE_ROUTES;
+    const response = AVAILABLE_ROUTES.data.filter((route) => (route.to === to && route.from === from ));
 
     if (response) {
-      console.log("INSIDE SEARCH: " + response.data);
-      setData(response.data);
+      console.log("INSIDE SEARCH: " + response);
+      console.log("INSIDE SEARCH_02: " + JSON.stringify(response));
+
+      console.log("FROM VALUE: " + from);
+      console.log("TO VALUE: " + to);
+      setData(response);
       setIsLoading(false);
     }
   }
@@ -82,7 +86,7 @@ export default function SearchBus() {
           <>
             {data.length === 0 ? (
               <div>
-                <h3>No Result!!</h3>
+                <h3>We don't have an available bus for the route you're lookin for</h3>
               </div>
             ) : (
               <div>
