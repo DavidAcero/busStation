@@ -1,6 +1,9 @@
 {
   "ts-node": {
-    "files": true
+    "files": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
   },
   "compilerOptions": {
     "target": "es2018",

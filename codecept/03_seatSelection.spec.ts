@@ -1,12 +1,10 @@
-import po from './selectors.json';
-
 Feature('Seat Selection');
 
 Before(({ I }) => {
     // Search Bus
     I.amOnPage('/');
-    I.fillField(po.landingPage.from, 'San Francisco');
-    I.fillField(po.landingPage.to, 'Los Angeles');
+    I.fillField('[data-cy=fromInput]', 'San Francisco');
+    I.fillField('[data-cy=toInput]', 'Los Angeles');
     I.click('Search Buses');
     I.see('Water Travels');
     I.click('[data-cy="viewHideSeats"]');

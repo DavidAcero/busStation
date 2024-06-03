@@ -1,5 +1,3 @@
-import po from './selectors.json';
-
 Feature('E2E Flow for Booking a Bus Ticket');
 
 Before(({ I }) => {
@@ -9,8 +7,8 @@ Before(({ I }) => {
 
 Scenario('Full flow', ({ I }) => {
     // Select route and search
-    I.fillField(po.landingPage.from, 'Tucson');
-    I.fillField(po.landingPage.to, 'Las Vegas');
+    I.fillField('[data-cy=fromInput]', 'Tucson');
+    I.fillField('[data-cy=toInput]', 'Las Vegas');
     I.click('Search Buses');
     I.see('Wind Travels');
 
