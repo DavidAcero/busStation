@@ -54,5 +54,15 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "@codeceptjs/configure": "^1.0.1",
+        "@codeceptjs/examples": "^1.2.4",
+        "@codeceptjs/ui": "^1.2.0",
+        "@types/node": "^20.13.0",
+        "codeceptjs": "^3.6.2",
+        "playwright": "^1.44.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.4.5"
     }
 }

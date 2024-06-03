@@ -1,0 +1,13 @@
+{
+    "landingPage": {
+        "from": "[data-cy=fromInput]",
+        "to": "[data-cy=toInput]",
+        "date": "[data-cy=dateInput]",
+        "searchBuses": "[data-cy=SearchBuses]"
+    },
+    "selectRide":{
+        "modifyButton": "[data-cy=modifyButton]",
+        "modifyFrom": "[data-cy=modifyFrom]",
+        "modifyTo": "[data-cy=modifyTo]"
+    }
+}
